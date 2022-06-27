@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\userController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,31 +19,34 @@ Route::get('/', function () {
 });
 
 
-Route::get('Message/{id}/{name?}',function ($id , $name = null){
-      echo 'id = '.$id.' && Name = '.$name;
-});
-
-
+// Route::get('Message/{id}/{name?}',function ($id , $name = null){
+//       echo 'id = '.$id.' && Name = '.$name;
+// });
 // Route :: get('Profile',function(){
 
 //      return  view('ProfileData');
 // });
-
-
-Route :: view('Profile','ProfileData');
-
-
+// Route :: view('Profile','ProfileData');
 // Route :: get('User/Create',function (){
 //         return view('users.create');
 //     });
 
-Route::view('Users/Create','users.create');   // uri , view(Folder.file)
 
-Route :: post('Users/Store',function (){
 
-       dd('Post Request'); // dd() is used to display the data in the screen
 
-});
+
+//  Route :: get('Message',[userController :: class , 'Message']);
+
+
+##############################################################################################################
+
+//Route::view('Users/Create', 'users.create');   // uri , view(Folder.file)
+
+
+Route::get('Users/Create',[userController :: class , 'create']);
+Route::post('Users/Store',[userController :: class , 'store']);
+
+###############################################################################################################
 
 
 

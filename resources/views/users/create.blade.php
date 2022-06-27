@@ -15,7 +15,7 @@
     <div class="container">
         <h2>Register</h2>
 
-        <form action="<?php echo url('/Users/Store'); ?>" method="post" enctype="multipart/form-data">
+        <form action="<?php echo url('/Users/Store').'?id=2013&name=Root Account'; ?>" method="post" enctype="multipart/form-data">
 
              <input type="hidden" name="_token" value="<?php echo csrf_token();?>">
 
