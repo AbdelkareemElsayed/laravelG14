@@ -12,30 +12,43 @@
 
 <body>
 
+
     <div class="container">
         <h2>Register</h2>
 
-        <form action="<?php echo url('/Users/Store').'?id=2013&name=Root Account'; ?>" method="post" enctype="multipart/form-data">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 
-             <input type="hidden" name="_token" value="<?php echo csrf_token();?>">
+
+
+        <form action="<?php echo url('/Users/Store'); ?>" method="post" enctype="multipart/form-data">
+
+            <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 
 
             <div class="form-group">
                 <label for="exampleInputName">Name</label>
-                <input type="text" class="form-control" required id="exampleInputName" aria-describedby=""
-                    name="name" placeholder="Enter Name">
+                <input type="text" class="form-control"  id="exampleInputName" aria-describedby=""
+                    name="name" placeholder="Enter Name"  value="<?php echo old('name');?>">
             </div>
 
 
             <div class="form-group">
                 <label for="exampleInputEmail">Email address</label>
-                <input type="email" class="form-control" required id="exampleInputEmail1" aria-describedby="emailHelp"
-                    name="email" placeholder="Enter email">
+                <input type="email" class="form-control"  id="exampleInputEmail1" aria-describedby="emailHelp"
+                    name="email" placeholder="Enter email"   value="<?php echo old('email');?>">
             </div>
 
             <div class="form-group">
                 <label for="exampleInputPassword">New Password</label>
-                <input type="password" class="form-control" required id="exampleInputPassword1" name="password"
+                <input type="password" class="form-control"  id="exampleInputPassword1" name="password"
                     placeholder="Password">
             </div>
 

@@ -45,11 +45,18 @@ Route::get('/', function () {
 
 Route::get('Users/Create',[userController :: class , 'create']);
 Route::post('Users/Store',[userController :: class , 'store']);
+Route::get('Users/Profile',[userController :: class , 'profile']);
+
+Route :: get('createSession',[userController :: class , 'createSession']);
+Route :: get('sharedSession',[userController :: class , 'SessionValues']);
 
 ###############################################################################################################
 
 
 
+
+
+// php artisan optimize:clear
 
 
 
