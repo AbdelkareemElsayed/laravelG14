@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Register</title>
+    <title>Edit Student</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -28,28 +28,37 @@
 
 
 
-        @include('messages')
+          @include('messages')
 
 
 
 
-        <form action="<?php echo url('/Students/Store'); ?>" method="post" enctype="multipart/form-data">
+        <form action="{{  url('Student/update/'.$data->id) }}" method="post" enctype="multipart/form-data">
 
-            <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-
+            @csrf
+            @method('PUT')
 
             <div class="form-group">
                 <label for="exampleInputName">Name</label>
                 <input type="text" class="form-control" id="exampleInputName" aria-describedby="" name="name"
-                    placeholder="Enter Name" value="<?php echo old('name'); ?>">
+                    placeholder="Enter Name" value="{{$data->name}}">
             </div>
 
 
             <div class="form-group">
                 <label for="exampleInputEmail">Email address</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                    name="email" placeholder="Enter email" value="<?php echo old('email'); ?>">
+                    name="email" placeholder="Enter email" value="{{ $data->email }}">
             </div>
+
+
+            <div class="form-group">
+                <label for="exampleInputPassword">Change Password ? </label>
+                <input type="checkbox"  id="exampleInputPassword1" name="changePassword"
+                    >
+            </div>
+
+
 
             <div class="form-group">
                 <label for="exampleInputPassword">New Password</label>
@@ -58,10 +67,12 @@
             </div>
 
 
-            <div class="form-group">
+
+
+            {{-- <div class="form-group">
                 <label for="exampleInputPassword">Image</label>
                 <input type="file" name="image">
-            </div>
+            </div> --}}
 
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>

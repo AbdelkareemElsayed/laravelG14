@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Register</title>
+    <title>SignIn</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -14,7 +14,7 @@
 
 
     <div class="container">
-        <h2>Register</h2>
+        <h2>SignIn</h2>
 
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -31,18 +31,11 @@
         @include('messages')
 
 
-
-
-        <form action="<?php echo url('/Students/Store'); ?>" method="post" enctype="multipart/form-data">
+        <form action="<?php echo url('DOLogin'); ?>" method="post" enctype="multipart/form-data">
 
             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 
 
-            <div class="form-group">
-                <label for="exampleInputName">Name</label>
-                <input type="text" class="form-control" id="exampleInputName" aria-describedby="" name="name"
-                    placeholder="Enter Name" value="<?php echo old('name'); ?>">
-            </div>
 
 
             <div class="form-group">
@@ -52,18 +45,14 @@
             </div>
 
             <div class="form-group">
-                <label for="exampleInputPassword">New Password</label>
+                <label for="exampleInputPassword"> Password</label>
                 <input type="password" class="form-control" id="exampleInputPassword1" name="password"
                     placeholder="Password">
             </div>
 
 
-            <div class="form-group">
-                <label for="exampleInputPassword">Image</label>
-                <input type="file" name="image">
-            </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Login</button>
         </form>
     </div>
 

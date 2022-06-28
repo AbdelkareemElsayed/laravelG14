@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\student\authStudentController;
 use App\Http\Controllers\userController;
-use App\Http\Controllers\studentController;
+use App\Http\Controllers\student\studentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -56,6 +57,16 @@ Route :: get('sharedSession',[userController :: class , 'SessionValues']);
 Route :: get('Students',[studentController :: class , 'index']);
 Route :: get('Students/Create',[studentController :: class , 'create']);
 Route :: post('Students/Store',[studentController :: class , 'store']);
+Route :: get('Student/edit/{id}',[studentController :: class , 'edit']);
+Route :: put('Student/update/{id}',[studentController :: class , 'update']);
+// Route :: get('Students/Delete/{id}',[studentController :: class , 'remove']);    <a href >
+Route :: delete('Students/Delete',[studentController :: class , 'remove']);
+
+###############################################################################################################
+// AUTH ROUTES . . .
+Route :: get('Login',[authStudentController :: class , 'login']);
+Route :: post('DOLogin',[authStudentController :: class , 'doLogin']);
+Route :: get('Logout',[authStudentController :: class , 'Logout']);
 
 
 ###############################################################################################################
@@ -64,10 +75,6 @@ Route :: post('Students/Store',[studentController :: class , 'store']);
 
 
 // php artisan optimize:clear
-
-
-
-
 // http://localhost/laravelG14/public/Message?id=2013
 
 // http://localhost/laravelG14/public/Message/2013
