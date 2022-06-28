@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\userController;
+use App\Http\Controllers\studentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -51,7 +52,13 @@ Route :: get('createSession',[userController :: class , 'createSession']);
 Route :: get('sharedSession',[userController :: class , 'SessionValues']);
 
 ###############################################################################################################
+// STUDENT ROUTES . . .
+Route :: get('Students',[studentController :: class , 'index']);
+Route :: get('Students/Create',[studentController :: class , 'create']);
+Route :: post('Students/Store',[studentController :: class , 'store']);
 
+
+###############################################################################################################
 
 
 
