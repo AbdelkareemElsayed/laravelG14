@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 
@@ -37,17 +35,18 @@
 
 
         <div class="page-header">
-            <h1>  </h1>
+            <h1> {{ $title }} </h1>
             <br>
 
-            {{  'Welcome , '.auth('student')->user()->name }}
+            {{ 'Welcome , ' . auth('student')->user()->name }}
             <br>
 
             @include('messages')
 
         </div>
 
-        <a href="{{url('Students/Create')}}" class='btn btn-primary m-r-1em' >+ Account</a>   <a href="{{url('Logout')}}" class='btn btn-primary m-r-1em' >Logout</a>
+        <a href="{{ url('Blogs/create') }}" class='btn btn-primary m-r-1em'>+ Blog</a> <a href="{{ url('Logout') }}"
+            class='btn btn-primary m-r-1em'>Logout</a>
 
         <br>
 
@@ -55,30 +54,36 @@
             <!-- creating our table heading -->
             <tr>
                 <th>ID</th>
-                <th>Name</th>
-                <th>Email</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Date</th>
                 <th>image</th>
-
+                <th>AddedBy</th>
                 <th>action</th>
             </tr>
 
 
-            @foreach ($data as $key => $student)
+            @foreach ($data as $key => $Raw)
                 <tr>
 
-                    <td>{{ $student->id }}</td>
-                    <td>{{ $student->name }}</td>
-                    <td>{{ $student->email }}</td>
-                    <td><img src="{{url('images/students/'.$student->image)}}"  width="80px" height="80px" ></td>
+                    <td>{{ $Raw->id }}</td>
+                    <td>{{ $Raw->title }}</td>
+                    <td>{{ Str::limit($Raw->content, 30, '...') }}</td>
+                    <td>{{ date('Y-m-d', $Raw->date) }}</td>
+                    <td><img src="{{ url('images/blogs/' . $Raw->image) }}" width="80px" height="80px"></td>
+
+                    <td> {{ $Raw->name }} </td>
+
 
                     <td>
+                        <a href='{{ url('Blogs/' . $Raw->id) }}' class='btn btn-primary m-r-1em'>Show Raw</a>
+                    </td>
 
-                        {{-- <a href='{{url('Students/Delete/'.$student->id)}}' class='btn btn-danger m-r-1em'>Remove Raw</a> --}}
-
-                        <a href='' data-toggle="modal" data-target="#modal_single_del{{ $student->id }}"
+                    <td>
+                        <a href='' data-toggle="modal" data-target="#modal_single_del{{ $Raw->id }}"
                             class='btn btn-danger m-r-1em'>Remove Raw</a>
-
-                        <a href='{{ url('Student/edit/' . $student->id) }}' class='btn btn-primary m-r-1em'>Update Raw</a>
+                        <a href='{{ url('Student/edit/' . $Raw->id) }}' class='btn btn-primary m-r-1em'>Update
+                            Raw</a>
                     </td>
                 </tr>
 
@@ -87,7 +92,7 @@
 
 
 
-                <div class="modal" id="modal_single_del{{ $student->id }}" tabindex="-1" role="dialog">
+                <div class="modal" id="modal_single_del{{ $Raw->id }}" tabindex="-1" role="dialog">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -98,15 +103,13 @@
                             </div>
 
                             <div class="modal-body">
-                                Remove Student : {{ $student->name }} !!!!
+                                Remove Blod : {{ $Raw->title }} !!!!
                             </div>
                             <div class="modal-footer">
-                                <form action="{{ url('Students/Delete/') }}" method="post">
+                                <form action="{{ url('Blogs/' . $Raw->id) }}" method="post">
 
                                     @method('delete') {{-- <input type="hidden" name="_method" value="delete"> --}}
                                     @csrf
-
-                                    <input type="hidden" name="id" value="{{ $student->id }}">
 
                                     <div class="not-empty-record">
                                         <button type="submit" class="btn btn-primary">Delete</button>
