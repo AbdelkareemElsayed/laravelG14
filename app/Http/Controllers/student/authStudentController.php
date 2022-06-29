@@ -29,8 +29,9 @@ class authStudentController extends Controller
          // Auth :: attempt() is a method that checks if the user is authenticated.
          // If the user is authenticated, it will return true.
          // If the user is not authenticated, it will return false.
+         //auth()->guard('student')->attempt($data)
 
-         if(auth()->attempt($data)){
+         if(auth('student')->attempt($data)){
 
             return redirect(url('Students'));
          }else{
@@ -47,7 +48,7 @@ class authStudentController extends Controller
 
      public function Logout(){
 
-            auth()->logout();
+            auth('student')->logout();
 
             return redirect(url('Login'));
      }

@@ -11,24 +11,23 @@ class studentController extends Controller
     //
 
 
+    function __construct()
+    {
+          $this->middleware('studentCheck',['except' => ['create','store']]);
+    }
+
+
     public function index()
     {
-         if(auth()->check()){
 
         // select * from users  . . .
 
         // $count =  student :: where('id',300) -> get()->count();
         // dd($count)
 
-
-
         $students =  student::get(); // get all students
-
-
         return view('students.index', ['data' => $students]);
-         }else{
-            return redirect(url('Login'));
-         }
+
     }
 
     #############################################################################################################
@@ -150,4 +149,10 @@ class studentController extends Controller
 
         return redirect(url('Students'));
     }
+
+
+
+
+
+
 }

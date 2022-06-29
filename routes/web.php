@@ -3,6 +3,7 @@
 use App\Http\Controllers\student\authStudentController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\student\studentController;
+use App\Http\Controllers\blogController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -54,22 +55,43 @@ Route :: get('sharedSession',[userController :: class , 'SessionValues']);
 
 ###############################################################################################################
 // STUDENT ROUTES . . .
-Route :: get('Students',[studentController :: class , 'index']);
-Route :: get('Students/Create',[studentController :: class , 'create']);
-Route :: post('Students/Store',[studentController :: class , 'store']);
-Route :: get('Student/edit/{id}',[studentController :: class , 'edit']);
-Route :: put('Student/update/{id}',[studentController :: class , 'update']);
-// Route :: get('Students/Delete/{id}',[studentController :: class , 'remove']);    <a href >
-Route :: delete('Students/Delete',[studentController :: class , 'remove']);
+// Route::middleware('studentCheck')->group(function(){
+
+    Route :: get('Students',[studentController :: class , 'index']);
+    Route :: get('Students/Create',[studentController :: class , 'create']);
+    Route :: post('Students/Store',[studentController :: class , 'store']);
+    Route :: get('Student/edit/{id}',[studentController :: class , 'edit']);
+    Route :: put('Student/update/{id}',[studentController :: class , 'update']);
+    // Route :: get('Students/Delete/{id}',[studentController :: class , 'remove']);    <a href >
+    Route :: delete('Students/Delete',[studentController :: class , 'remove']);
+    Route :: get('Logout',[authStudentController :: class , 'Logout']);
+// });
+###############################################################################################################
+ // Blog Routes . . .
+ Route :: resource('Blogs',blogController::class);
+
+ /*
+    /Blogs        (GET)       >>>   Route::get('Blogs',[blogController :: class , 'index']);
+    /Blogs/create (GET)       >>>   Route::get('Blogs/create',[blogController :: class , 'create']);
+    /Blogs        (POST)      >>>   Route::post('Blogs',[blogController :: class , 'store']);
+    /Blogs/{id}   (GET)       >>>   Route::get('Blogs/{id}',[blogController :: class , 'show']);
+    /Blogs/{id}/edit (GET)    >>>   Route::get('Blogs/{id}/edit',[blogController :: class , 'edit']);
+    /Blogs/{id}   (PUT)       >>>   Route::put('Blogs/{id}',[blogController :: class , 'update']);
+    /Blogs/{id}   (DELETE)    >>>   Route::delete('Blogs/{id}',[blogController :: class , 'destroy']);
+    */
+
+
 
 ###############################################################################################################
 // AUTH ROUTES . . .
 Route :: get('Login',[authStudentController :: class , 'login']);
 Route :: post('DOLogin',[authStudentController :: class , 'doLogin']);
-Route :: get('Logout',[authStudentController :: class , 'Logout']);
 
 
 ###############################################################################################################
+
+
+
 
 
 

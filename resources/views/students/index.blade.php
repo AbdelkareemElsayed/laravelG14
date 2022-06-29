@@ -38,7 +38,7 @@
             <h1>Read Users </h1>
             <br>
 
-            {{  'Welcome , '.auth()->user()->name }}
+            {{  'Welcome , '.auth('student')->user()->name }}
             <br>
 
             @include('messages')
