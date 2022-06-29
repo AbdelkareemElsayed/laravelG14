@@ -7,6 +7,15 @@ use Illuminate\Support\Facades\DB;
 
 class blogController extends Controller
 {
+
+
+    function __construct()
+    {
+          $this->middleware('studentCheck');
+    }
+
+
+
     /**
      * Display a listing of the resource.
      *
@@ -105,6 +114,11 @@ class blogController extends Controller
     {
         //
 
+       $data =   DB :: table('blogs')->find($id);
+
+        return view('blogs.edit',["title" => "Edit Blog.", 'data' => $data]);
+
+
     }
 
     /**
@@ -117,6 +131,9 @@ class blogController extends Controller
     public function update(Request $request, $id)
     {
         //
+
+         // DB :: table('blogs')->where('id',$id)->update($data);
+
     }
 
     /**

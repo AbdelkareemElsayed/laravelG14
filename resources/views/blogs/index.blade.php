@@ -82,7 +82,7 @@
                     <td>
                         <a href='' data-toggle="modal" data-target="#modal_single_del{{ $Raw->id }}"
                             class='btn btn-danger m-r-1em'>Remove Raw</a>
-                        <a href='{{ url('Student/edit/' . $Raw->id) }}' class='btn btn-primary m-r-1em'>Update
+                        <a href="{{ url('Blogs/' . $Raw->id.'/edit') }} " class='btn btn-primary m-r-1em'>Update
                             Raw</a>
                     </td>
                 </tr>
