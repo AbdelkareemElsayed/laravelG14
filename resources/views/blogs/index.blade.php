@@ -49,8 +49,11 @@
         <a href="{{ url('Students') }}" class='btn btn-primary m-r-1em'>List Students</a>
          <a href="{{ url('Logout') }}"
             class='btn btn-primary m-r-1em'>Logout</a>
+            <br>
 
-        <br>
+            <a href="{{url('Lang/en')}}" >en</a> ||     <a href="{{url('Lang/ar')}}" >ع</a>
+            <br>
+
 
         <table class='table table-hover table-responsive table-bordered'>
             <!-- creating our table heading -->

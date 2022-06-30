@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::middleware('checkLang')->group(function(){
 Route::get('/', function () {
     return view('welcome');
 });
@@ -89,6 +90,25 @@ Route :: post('DOLogin',[authStudentController :: class , 'doLogin']);
 
 
 ###############################################################################################################
+
+Route::get('Lang/{lang}', function ($lang) {
+
+    $lang = ($lang == "ar") ? "ar" : "en";
+
+    session()->put('lang', $lang);
+
+     app()->setLocale($lang);
+
+
+    return redirect()->back();
+});
+
+###############################################################################################################
+
+
+
+});
+
 
 
 

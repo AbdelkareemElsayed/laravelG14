@@ -14,7 +14,7 @@
 
 
     <div class="container">
-        <h2>Add Blog</h2>
+        <h2>{{__('labels.add_blog')}}</h2>
 
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -35,30 +35,30 @@
             @csrf
 
             <div class="form-group">
-                <label for="exampleInputName">Title</label>
+                <label for="exampleInputName">{{__('labels.title')}}</label>
                 <input type="text" class="form-control" id="exampleInputName" aria-describedby="" name="title"
                     placeholder="Enter Title" value="{{ old('title') }}">
             </div>
 
 
             <div class="form-group">
-                <label for="exampleInputEmail">Content</label>
+                <label for="exampleInputEmail">{{__('labels.content')}}</label>
                 <textarea  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="content"
                     placeholder="Enter Content"> {{ old('content') }}</textarea>
             </div>
 
             <div class="form-group">
-                <label for="exampleInputPassword">Date</label>
+                <label for="exampleInputPassword">{{__('labels.date')}}</label>
                 <input type="date" class="form-control" id="exampleInput" name="date">
             </div>
 
 
             <div class="form-group">
-                <label for="exampleInputPassword">Image</label>
+                <label for="exampleInputPassword">{{__('labels.image')}}</label>
                 <input type="file" name="image">
             </div>
 
-            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="submit" class="btn btn-primary">{{__('labels.save')}}</button>
         </form>
     </div>
 

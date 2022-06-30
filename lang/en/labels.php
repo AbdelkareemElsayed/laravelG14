@@ -12,6 +12,8 @@ return [
 "content"  => "Content",
 "date"     => "Date",
 "AddedBy"  => "Added By",
+"save"     => "save",
+"add_blog"  => "Create Blog"
 ];
 
 ?>

@@ -46,7 +46,7 @@
              @php
 
             //   echo   app()->getLocale();
-            app()->setlocale('en');
+            // app()->setlocale('en');
 
              @endphp
 
@@ -60,6 +60,10 @@
         </div>
 
         <a href="{{url('Students/Create')}}" class='btn btn-primary m-r-1em' >+ Account</a>  <a href="{{url('Blogs')}}" class='btn btn-primary m-r-1em' >List Blogs</a>   <a href="{{url('Logout')}}" class='btn btn-primary m-r-1em' >Logout</a>
+        <br>
+
+        <a href="{{url('Lang/en')}}" >en</a> ||     <a href="{{url('Lang/ar')}}" >ع</a>
+
 
         <br>
 

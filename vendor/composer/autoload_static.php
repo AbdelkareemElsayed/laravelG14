@@ -178,8 +178,8 @@ class ComposerStaticInit72de975994b20699ec65c20cb8533223
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
         'Whoops\\' => 
         array (
@@ -335,8 +335,8 @@ class ComposerStaticInit72de975994b20699ec65c20cb8533223
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -508,6 +508,11 @@ class ComposerStaticInit72de975994b20699ec65c20cb8533223
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\api\\userController' => __DIR__ . '/../..' . '/app/Http/Controllers/api/userController.php',
+        'App\\Http\\Controllers\\blogController' => __DIR__ . '/../..' . '/app/Http/Controllers/blogController.php',
+        'App\\Http\\Controllers\\student\\authStudentController' => __DIR__ . '/../..' . '/app/Http/Controllers/student/authStudentController.php',
+        'App\\Http\\Controllers\\student\\studentController' => __DIR__ . '/../..' . '/app/Http/Controllers/student/studentController.php',
+        'App\\Http\\Controllers\\userController' => __DIR__ . '/../..' . '/app/Http/Controllers/userController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -517,7 +522,10 @@ class ComposerStaticInit72de975994b20699ec65c20cb8533223
         'App\\Http\\Middleware\\TrustHosts' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustHosts.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Middleware\\langChange' => __DIR__ . '/../..' . '/app/Http/Middleware/langChange.php',
+        'App\\Http\\Middleware\\studentAuthCheck' => __DIR__ . '/../..' . '/app/Http/Middleware/studentAuthCheck.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
+        'App\\Models\\student' => __DIR__ . '/../..' . '/app/Models/student.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
