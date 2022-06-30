@@ -45,7 +45,9 @@
 
         </div>
 
-        <a href="{{ url('Blogs/create') }}" class='btn btn-primary m-r-1em'>+ Blog</a> <a href="{{ url('Logout') }}"
+        <a href="{{ url('Blogs/create') }}" class='btn btn-primary m-r-1em'>+ Blog</a>
+        <a href="{{ url('Students') }}" class='btn btn-primary m-r-1em'>List Students</a>
+         <a href="{{ url('Logout') }}"
             class='btn btn-primary m-r-1em'>Logout</a>
 
         <br>
@@ -53,13 +55,13 @@
         <table class='table table-hover table-responsive table-bordered'>
             <!-- creating our table heading -->
             <tr>
-                <th>ID</th>
-                <th>Title</th>
-                <th>Content</th>
-                <th>Date</th>
-                <th>image</th>
-                <th>AddedBy</th>
-                <th>action</th>
+                <th>{{__('labels.id')}} </th>
+                <th>{{__('labels.title')}}</th>
+                <th>{{__('labels.content')}}</th>
+                <th>{{__('labels.date')}}</th>
+                <th>{{__('labels.image')}}</th>
+                <th>{{__('labels.AddedBy')}}</th>
+                <th>{{__('labels.action')}}</th>
             </tr>
 
 

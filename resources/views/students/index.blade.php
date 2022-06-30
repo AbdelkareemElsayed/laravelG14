@@ -43,23 +43,34 @@
             {{  'Welcome , '.auth('student')->user()->name }}
             <br>
 
+             @php
+
+            //   echo   app()->getLocale();
+            app()->setlocale('en');
+
+             @endphp
+
+
+
+            <br>
+
+
             @include('messages')
 
         </div>
 
-        <a href="{{url('Students/Create')}}" class='btn btn-primary m-r-1em' >+ Account</a>   <a href="{{url('Logout')}}" class='btn btn-primary m-r-1em' >Logout</a>
+        <a href="{{url('Students/Create')}}" class='btn btn-primary m-r-1em' >+ Account</a>  <a href="{{url('Blogs')}}" class='btn btn-primary m-r-1em' >List Blogs</a>   <a href="{{url('Logout')}}" class='btn btn-primary m-r-1em' >Logout</a>
 
         <br>
 
         <table class='table table-hover table-responsive table-bordered'>
             <!-- creating our table heading -->
             <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>image</th>
-
-                <th>action</th>
+                <th>{{__('labels.id')}}</th>
+                <th>{{__('labels.name')}}</th>
+                <th>{{__('labels.email')}}</th>
+                <th>{{__('labels.image')}}</th>
+                <th>{{__('labels.action')}}</th>
             </tr>
 
 
